@@ -9,7 +9,8 @@ const getPurchasedPlans = require('./controllers/get_purchased_plans')
 const seedAndSync = require('./controllers/seed_and_sync')
 
 
-const port = 8080
+const port = process.env.PORT || 5000;
+
 const app = express()
 
 app.use(express.json())
