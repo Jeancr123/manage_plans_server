@@ -1,0 +1,41 @@
+@base_url = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjRiODFhNi1mNTUyLTQ1MzYtOTQ5OC0zOTlhZTc4MzJkYjIiLCJ1c2VyRW1haWwiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA5MTEzMjgxLCJleHAiOjE3MDkxMTY4ODF9.seJABwhyBm4NiO8ve56j5Tbfp70Q7e9yXCDRuSBj8RE
+
+###
+POST {{base_url}}/seed_and_sync
+Content-Type: application/json
+
+
+### GET /
+GET {{base_url}}/
+
+### GET /plans
+GET {{base_url}}/plans
+
+### POST /login
+# Replace token variable at the top of file with token from this function  for smoother testing process below
+POST {{base_url}}/login
+Content-Type: application/json
+
+{
+  "email": "john.smith@example.com",
+  "password": "password123"
+}
+
+### POST /purchase
+POST {{base_url}}/purchase
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+  "planId": "2aeded0f-5e34-4c6a-9599-9dc194cabd3a"
+}
+
+### GET /get_purchase/:purchaseId
+GET {{base_url}}/get_purchase/6531043d-eaf2-48d9-996f-a303fe0bedab
+Authorization: {{token}}
+
+
+###
+GET {{base_url}}/get_purchased_plans
+Authorization: {{token}}

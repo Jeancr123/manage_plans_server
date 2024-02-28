@@ -1,0 +1,22 @@
+{
+  "name": "manage_plans_server",
+  "version": "1.0.0",
+  "description": "This application manages plans for a fictional service. This backend API is to manage the backend services and RESTful calls. Implemented with Node.js and Express, with a PostgreSQL database and Sequelize ORM framework",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "npm run test"
+  },
+  "author": "Jean Ramos",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "sequelize": "^6.37.1",
+    "sequelize-cli": "^6.6.2",
+    "uuid": "^9.0.1"
+  }
+}
