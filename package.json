@@ -4,8 +4,9 @@
   "description": "This application manages plans for a fictional service. This backend API is to manage the backend services and RESTful calls. Implemented with Node.js and Express, with a PostgreSQL database and Sequelize ORM framework",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "npm run test"
+    "start": "node server.js",
+    "test": "npm run test",
+    "start:dev": "nodemon server.js"
   },
   "author": "Jean Ramos",
   "license": "ISC",

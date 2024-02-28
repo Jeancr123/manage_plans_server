@@ -1,4 +1,5 @@
-@base_url = http://localhost:8080
+# @base_url = http://localhost:8080
+@base_url = https://manage-plans-server-44f92f5bfc73.herokuapp.com
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjRiODFhNi1mNTUyLTQ1MzYtOTQ5OC0zOTlhZTc4MzJkYjIiLCJ1c2VyRW1haWwiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzA5MTEzMjgxLCJleHAiOjE3MDkxMTY4ODF9.seJABwhyBm4NiO8ve56j5Tbfp70Q7e9yXCDRuSBj8RE
 
 ###
