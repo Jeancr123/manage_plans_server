@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express')
+const cors = require('cors');
 const authenticateUser = require('./utils/auth_check')
 const getPurchase = require('./controllers/get_purchase_details')
 const purchasePlan = require('./controllers/purchase_plan')
@@ -13,6 +14,7 @@ const port = process.env.PORT || 5000;
 
 const app = express()
 
+app.use(cors());
 app.use(express.json())
 
 
