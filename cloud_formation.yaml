@@ -10,7 +10,7 @@ Resources:
       Name: manage-plans-db-secret
       Description: Credentials for Manage Plans PostgreSQL DB
       GenerateSecretString:
-        SecretStringTemplate: '{"username": "admin"}'
+        SecretStringTemplate: '{"username": "dbadmin"}'
         GenerateStringKey: "password"
         ExcludeCharacters: '"@/\\'
 
@@ -44,7 +44,7 @@ Resources:
       AllocatedStorage: 20
       DBInstanceClass: db.t3.micro
       Engine: postgres
-      EngineVersion: 15.2
+      # EngineVersion: 15.2
       MasterUsername: !Join ['', [ '{{resolve:secretsmanager:', !Ref MyDbSecret, ':SecretString:username}}' ]]
       MasterUserPassword: !Join ['', [ '{{resolve:secretsmanager:', !Ref MyDbSecret, ':SecretString:password}}' ]]
       VPCSecurityGroups:
@@ -95,8 +95,8 @@ Resources:
           npm install -g yarn
           npm install -g pm2
           cd /home/ec2-user
-          git clone https://github.com/5minslearn/node_with_docker.git
-          cd node_with_docker
+          git clone https://github.com/Jeancr123/manage_plans_server.git
+          cd manage_plans_server
           yarn install
 
           SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id manage-plans-db-secret --region ${AWS::Region} | jq -r .SecretString)
