@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/seed_and_sync', seedAndSync)
+app.get('/seed_and_sync', seedAndSync)
 app.post('/login', login)
 app.get('/plans', getPlans);
 app.get('/get_purchased_plans', authenticateUser, getPurchasedPlans);
