@@ -10,7 +10,7 @@ const getPurchasedPlans = require('./controllers/get_purchased_plans')
 const seedAndSync = require('./controllers/seed_and_sync')
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 const app = express()
 
@@ -33,3 +33,7 @@ app.get('/get_purchase/:purchaseId',  authenticateUser, getPurchase)
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
 });
+
+app.post('/healthz', (req, res) => {
+    res.status(200).json({ message: 'OK' });
+})
