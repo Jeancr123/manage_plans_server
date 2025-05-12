@@ -10,7 +10,7 @@ Resources:
       Name: manage-plans-db-secret
       Description: Credentials for Manage Plans PostgreSQL DB
       GenerateSecretString:
-        SecretStringTemplate: '{"username": "dbadmin"}'
+        SecretStringTemplate: '{"username": "dbadmin", "password": "GreenEnergyIsCool", "jwt_secret": "GreenEnergyIsCool"}'
         GenerateStringKey: "password"
         ExcludeCharacters: '"@/\\'
 
@@ -103,6 +103,7 @@ Resources:
           DB_USER=$(echo $SECRET_JSON | jq -r .username)
           DB_PASS=$(echo $SECRET_JSON | jq -r .password)
           DB_HOST="${ManagePlansDB.Endpoint.Address}"
+          JWT_SECRET=$(echo $SECRET_JSON | jq -r .jwt_secret)
 
           cat > .env <<EOF
           DB_TYPE=postgres
@@ -111,6 +112,7 @@ Resources:
           DB_NAME=manageplans
           DB_USER=$DB_USER
           DB_PASSWORD=$DB_PASS
+          JWT_SECRET=$JWT_SECRET
           EOF
 
           pm2 start yarn --name sample_node -- start -p 8000
