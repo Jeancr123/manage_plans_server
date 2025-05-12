@@ -2,7 +2,7 @@ Resources:
   CloudFormationKeyPair:
     Type: AWS::EC2::KeyPair
     Properties:
-      KeyName: ManagePlansKey
+      KeyName: ManagePlansKeyPair
 
   MyDbSecret:
     Type: AWS::SecretsManager::Secret
